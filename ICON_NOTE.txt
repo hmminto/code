@@ -1,0 +1,17 @@
+ICON FILE NOTE
+==============
+
+The ProcessMemoryViewer.ico file is required but not included in this repository.
+
+To build the project, you need to:
+1. Create or obtain a .ico file
+2. Name it ProcessMemoryViewer.ico
+3. Place it in the root directory of the project
+
+You can:
+- Use any icon editor to create a simple icon
+- Download a free icon from icon websites
+- Use Visual Studio's built-in icon editor (Project -> Add Resource -> Icon)
+- Use a default Windows application icon
+
+For a quick solution, you can use any existing .ico file and rename it to ProcessMemoryViewer.ico.
