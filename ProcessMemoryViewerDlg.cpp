@@ -190,7 +190,7 @@ void CProcessMemoryViewerDlg::EnumerateMemoryRegions(DWORD processId)
         // Only add regions that are committed
         if (mbi.State == MEM_COMMIT || mbi.State == MEM_RESERVE || mbi.State == MEM_FREE)
         {
-            MemoryRegionInfo regionInfo;
+            MEMORYREGIONINFO regionInfo;
             regionInfo.baseAddress = mbi.BaseAddress;
             regionInfo.regionSize = mbi.RegionSize;
             regionInfo.state = mbi.State;
@@ -216,7 +216,7 @@ void CProcessMemoryViewerDlg::UpdateMemoryList()
 
     for (size_t i = 0; i < m_memoryRegions.size(); i++)
     {
-        const MemoryRegionInfo& info = m_memoryRegions[i];
+        const MEMORYREGIONINFO& info = m_memoryRegions[i];
 
         CString strBaseAddress;
         strBaseAddress.Format(_T("0x%016IX"), (SIZE_T)info.baseAddress);

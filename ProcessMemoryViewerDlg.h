@@ -5,15 +5,15 @@
 #include <Psapi.h>
 
 // Structure to hold process information
-struct ProcessInfo
+typedef struct _ProcessInfo
 {
     DWORD dwProcessId;
     CString strProcessName;
     CString strDisplayName;
-};
+} ProcessInfo;
 
 // Structure to hold memory region information
-struct MemoryRegionInfo
+typedef struct _MEMORYREGIONINFO
 {
     PVOID baseAddress;
     SIZE_T regionSize;
@@ -23,7 +23,7 @@ struct MemoryRegionInfo
     CString strState;
     CString strProtect;
     CString strType;
-};
+} MEMORYREGIONINFO;
 
 // CProcessMemoryViewerDlg dialog
 class CProcessMemoryViewerDlg : public CDialogEx
@@ -62,7 +62,7 @@ private:
 
     // Data
     std::vector<ProcessInfo> m_processes;
-    std::vector<MemoryRegionInfo> m_memoryRegions;
+    std::vector<MEMORYREGIONINFO> m_memoryRegions;
     DWORD m_selectedProcessId;
     HANDLE m_hSelectedProcess;
 
